@@ -1,4 +1,8 @@
 <script setup>
+import {ref, reactive} from 'vue'
+import {bd} from './data/guitarras'
+
+const guitarras = ref(bd)
 
 </script>
 
@@ -15,7 +19,7 @@
                     <div 
                         class="carrito"
                     >
-                        <img class="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
+                        <img class="img-fluid cart" src="/img/carrito.png" alt="imagen carrito" />
 
                         <div id="carrito" class="bg-white p-3">
                             <p class="text-center">El carrito esta vacio</p>
