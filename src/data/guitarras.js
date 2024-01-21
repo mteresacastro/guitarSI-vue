@@ -1,4 +1,4 @@
-export const bd = [
+export const db = [
     {
         id: 1,
         nombre: 'Lukather',
