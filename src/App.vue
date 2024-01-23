@@ -7,19 +7,46 @@ import Footer from './components/Footer.vue'
 
 const guitarras = ref([])
 const carrito = ref([])
+const guitarra = ref({})
 
 onMounted(() =>{
-    guitarras.value = db;
+    guitarras.value = db
+    guitarra.value = db[3]
 })
 
 const agregarCarrito = (guitarra) => {
-    guitarra.cantidad = 1;
-    carrito.value.push(guitarra); //si esta e script hace falta el .value, si está en templates no.
+    const existeCarrito = carrito.value.findIndex(producto => producto.id === guitarra.id)
+    console.log(existeCarrito)
+    if (existeCarrito >= 0){
+        carrito.value[existeCarrito].cantidad++;
+    }else{
+        guitarra.cantidad = 1;
+        carrito.value.push(guitarra); //si esta e script hace falta el .value, si está en templates no.  
+    }
 }
+
+const decrementarCantidad = (id) =>{
+    const index = carrito.value.findIndex(producto => producto.id === id)
+    if(carrito.value[index].cantidad <= 1) return;
+    carrito.value[index].cantidad--
+}
+
+const incrementarCantidad = (id) =>{
+    const index = carrito.value.findIndex(producto => producto.id === id)
+    if(carrito.value[index].cantidad >= 5) return;
+    carrito.value[index].cantidad++
+}
+
 </script>
 
 <template>
-    <Header />
+    <Header 
+    :carrito="carrito"
+    :guitarra="guitarra"
+    @decrementar-cantidad="decrementarCantidad"
+    @incrementar-cantidad="incrementarCantidad"
+    @agregar-carrito="agregarCarrito"
+    />
 
     <main class="container-xl mt-5">
         <h2 class="text-center">Nuestra Colección</h2>
