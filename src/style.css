@@ -89,7 +89,7 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #262626;
-  --bs-primary-rgb: 3, 64, 216;
+  --bs-primary-rgb: 32, 112, 200;
   --bs-secondary-rgb: 108, 117, 125;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
@@ -157,7 +157,7 @@ body {
   font-family: "Outfit", sans-serif;
   font-weight: 900;
   line-height: 1.2;
-  color:#032f9e;
+  color: #2070c8 ;
 }
 
 h1, .h1 {
@@ -317,11 +317,11 @@ button:not(:disabled),
 
 
 .container-xl {
-  --bs-gutter-x: 1.5rem;
+  --bs-gutter-x: 1rem;
   --bs-gutter-y: 0;
   width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * 0.5);
-  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  padding-right: calc(var(--bs-gutter-x) * 0.1);
+  padding-left: calc(var(--bs-gutter-x) * 0.1);
   margin-right: auto;
   margin-left: auto;
 }
