@@ -11,7 +11,7 @@ import { computed } from 'vue';
         }
     })
 
-    defineEmits(['decrementar-cantidad', 'incrementar-cantidad', 'agregar-carrito'])
+    defineEmits(['decrementar-cantidad', 'incrementar-cantidad', 'agregar-carrito', 'eliminar-producto', 'vaciar-carrito'])
 
     const totalPagar = computed(() =>{
         return props.carrito.reduce((total, producto) => total + producto.cantidad * producto.precio, 0)
@@ -35,7 +35,7 @@ import { computed } from 'vue';
                         <img class="img-fluid cart" src="/img/carrito.png" alt="imagen carrito" />
 
                         <div id="carrito" class="bg-white p-3">
-                            <p v-if="carrito.length === 0" class="text-center" m-0>El carrito esta vacio</p>
+                            <p v-if="carrito.length === 0" class="text-center" m-0>El carrito esta vacío</p>
                             <div v-else>
                                 <table class="w-100 table">
                                     <thead>
@@ -82,6 +82,7 @@ import { computed } from 'vue';
                                                 <button
                                                     class="btn btn-danger"
                                                     type="button"
+                                                    @click="$emit('eliminar-producto', producto.id)"
                                                 >
                                                     X
                                                 </button>
@@ -91,7 +92,11 @@ import { computed } from 'vue';
                                 </table>
 
                                 <p class="text-end">Total pagar: <span class="fw-bold">$ {{ totalPagar }}</span></p>
-                                <button class="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
+                                <button 
+                                    class="btn btn-dark w-100 mt-3 p-2"
+                                    @click="$emit('vaciar-carrito')"
+                                    >
+                                    Vaciar Carrito</button>
                             </div>
                         </div>
                     </div>
