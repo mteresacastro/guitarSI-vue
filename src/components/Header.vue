@@ -22,7 +22,7 @@ import { computed } from 'vue';
 <template>
     <header class="py-5 header">
         <div class="container-xl">
-            <div class="row justify-content-center justify-content-md-between">
+            <div class="rowStart">
                 <div class="col-8 col-md-3">
                     <a href="index.html">
                         <img class="img-fluid" src="/img/LOGO.png" alt="imagen logo">
@@ -59,7 +59,7 @@ import { computed } from 'vue';
                                             </td>
                                             <td>{{ producto.nombre }}</td>
                                             <td class="fw-bold">
-                                                   $ {{ producto.precio }}
+                                                   {{ producto.precio }} €
                                             </td>
                                             <td class="flex align-items-start gap-4">
                                                 <button
@@ -91,7 +91,7 @@ import { computed } from 'vue';
                                     </tbody>
                                 </table>
 
-                                <p class="text-end">Total pagar: <span class="fw-bold">$ {{ totalPagar }}</span></p>
+                                <p class="text-end">Total pagar: <span class="fw-bold">{{ totalPagar }} €</span></p>
                                 <button 
                                     class="btn btn-dark w-100 mt-3 p-2"
                                     @click="$emit('vaciar-carrito')"
@@ -103,11 +103,11 @@ import { computed } from 'vue';
                 </nav>
             </div><!--.row-->
 
-            <div class="row mt-5">
+            <div class="row mt-5 infoHeader">
                 <div class="col-md-6 text-center text-md-start pt-5">
                     <h1 class="display-2 fw-bold">Modelo {{ guitarra.nombre }}</h1>
                     <p class="mt-5 fs-5 text-white">{{ guitarra.descripcion }}</p>
-                    <p class="text-primary fs-1 fw-black">${{ guitarra.precio }}</p>
+                    <p class="text-primary fs-1 fw-black">{{ guitarra.precio }} €</p>
                     <button 
                         type="button"
                         class="btn fs-4 bg-primary text-white py-2 px-5"
