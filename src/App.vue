@@ -10,7 +10,7 @@ const carrito = ref([])
 const guitarra = ref({})
 
 watch(carrito, () => {
- //console.log('algo<cambio...')
+
  guardarLocalStorage(); //se ejecuta cada vez que algo cambia en carrito
 
 }, {
