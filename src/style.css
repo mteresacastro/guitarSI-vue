@@ -28,8 +28,8 @@
   min-width: 350px;
   width: fit-content;
   top: 100%;
-  right: unset;
-  left: 0;
+  right: -150px;
+  left: unset;
   margin-left: unset;
   margin-right: unset;
 }
@@ -782,8 +782,14 @@ button:not(:disabled),
 
 .rowStart{
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+}
+@media all and (min-width: 768px){
+  .rowStart{
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  }
 }
