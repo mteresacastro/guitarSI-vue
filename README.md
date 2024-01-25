@@ -1,4 +1,4 @@
-### GuitarSI - Frontend de Ecommerce de Guitarras
+# GuitarSI - Frontend de Ecommerce de Guitarras
 ¡Bienvenido a GuitarSI! Este es el proyecto frontend de un ecommerce de guitarras desarrollado con Vue.js utilizando la Composition API. Aquí encontrarás una tienda virtual donde podrás explorar y comprar guitarras de diferentes estilos y marcas.
 
 En este proyecto, reforzaremos varios conceptos importantes de Vue.js y la Composition API para mejorar nuestras habilidades en el desarrollo de aplicaciones web interactivas. A continuación, explicaremos cada uno de estos conceptos que se han empleado en GuitarSI:
@@ -8,9 +8,9 @@ En este proyecto, reforzaremos varios conceptos importantes de Vue.js y la Compo
 1. Creación de Componentes
 En GuitarSI, hemos utilizado la estructura de componentes de Vue.js para dividir la interfaz de usuario en piezas reutilizables y fáciles de mantener. Los componentes clave que hemos creado son:
 
-Header: Contiene la barra de navegación y el carrito de compras.
-Footer: Muestra información del sitio.
-Guitarra: Representa una tarjeta de guitarra con detalles como imagen, nombre, precio, etc.
+- Header: Contiene la barra de navegación y el carrito de compras.
+- Footer: Muestra información del sitio.
+- Guitarra: Representa una tarjeta de guitarra con detalles como imagen, nombre, precio, etc.
 
 2. Custom Events
 Para permitir la interacción entre componentes, hemos utilizado custom events para comunicar cambios o acciones específicas. Por ejemplo, cuando un usuario agrega una guitarra al carrito de compras, se emite un evento personalizado para que otros componentes, como el carrito de compras, actualicen su estado.
