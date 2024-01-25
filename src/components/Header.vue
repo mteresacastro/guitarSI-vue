@@ -54,7 +54,7 @@ import { computed } from 'vue';
                                             <td>
                                                 <img 
                                                     class="img-fluid" 
-                                                    :src="'/img/' + producto.imagen +'.jpg'" 
+                                                    :src="'/guitarSI-vue/img/'+ producto.imagen +'.jpg'" 
                                                     :alt="'imagen guitarra '+ producto.nombre ">
                                             </td>
                                             <td>{{ producto.nombre }}</td>
